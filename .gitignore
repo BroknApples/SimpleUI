@@ -1,4 +1,4 @@
 .vscode
-/build
-/outline
+outline/
+build/
 CMakeLists.txt
