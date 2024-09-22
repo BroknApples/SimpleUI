@@ -1,7 +1,0 @@
-/out
-bin/
-build/
-/.vs
-.idea/
-CMakeSettings.json
-outline/
