@@ -1,0 +1,94 @@
+Name = SimpleUI
+
+basically gonna have an engine class that holds both an app class instance and editor class instance.
+editor is like the menu nav, app is the app being created in this app
+each will have its own entity list and stuff, app is dynamically allocated probably
+
+
+----------------------------------------------------------------
+main.cpp {
+  int main() {
+    SimpleUIEngine app // class
+
+    if(!app.Init()) {
+      output error code
+      return
+    }
+
+    while(!app.Exit()) {
+      app.Update();
+      app.Render();
+      app.Draw();
+    }
+
+    app.Clean();
+
+    return 0;
+    }
+}
+
+SimpleUIEngine.hpp {
+  class SimpleUIEngine {
+  private:
+    vulkan/glfw windows and stuff, renderer stuff, etc.
+
+    App* app;
+    Editor editor;
+
+  public:
+    SimplueUIEngine() : app(nullptr){}
+    // check if app is nullptr in each one (if statement)
+    void Update(); // do both app and editor
+    void Render(); // do both app and editor
+    void Draw(); // do both app and editor
+  };
+}
+
+Editor.hpp {
+  class Editor {
+   private:
+    EntityManager entities;
+
+   public:
+    void Update(); // input processing, etc.
+    void Render(); // render all entities
+    void Draw(); // put to screen
+  };
+}
+
+App.hpp {
+  class App {
+   private:
+    EntityManager entities;
+
+   public:
+    void Update(); // input processing, etc.
+    void Render(); // render all entities
+    void Draw(); // put to screen
+  };
+}
+
+EntityManager.hpp {
+  class EntityManager {
+   private:
+    vector<&Entity> entity_list;
+   public:
+    virtual void Update();
+    virtual void Render();
+    virtual void Draw();
+  };
+}
+
+Entity.hpp {
+  class Entity : public EntityManager {
+   private:
+    string type;
+    int id? maybe;
+    position x,y;
+
+   public:
+    void Update() override;
+    void Render() override;
+    void Draw() override;
+  };
+}
