@@ -4,6 +4,11 @@ basically gonna have an engine class that holds both an app class instance and e
 editor is like the menu nav, app is the app being created in this app
 each will have its own entity list and stuff, app is dynamically allocated probably
 
+Have config file that has the default and eventually edited home screens and stuff
+have last open path var
+editor elements + sizes, etc.                                         
+
+have config file check for open appcreator instance in main.cpp
 
 ----------------------------------------------------------------
 main.cpp {
@@ -56,8 +61,8 @@ Editor.hpp {
   };
 }
 
-App.hpp {
-  class App {
+AppCreator.hpp {
+  class AppCreator {
    private:
     EntityManager entities;
 
