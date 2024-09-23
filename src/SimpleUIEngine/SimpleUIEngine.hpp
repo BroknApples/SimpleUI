@@ -4,21 +4,26 @@
 #include <iostream>
 
 #include <imgui/imgui.h>
+#include <GLFW/glfw3.h>
 #include <vulkan/vulkan.hpp>
 
+#include "../Graphics/Window.hpp"
 #include "Editor.hpp"
 #include "AppCreator.hpp"
 
 class SimpleUIEngine {
  private:
-  AppCreator* app = nullptr;
-  Editor editor;
+  SimUIWindow window_;
+
+  Editor editor_;
+  AppCreator* app_ = nullptr;
   
  public:
-  SimpleUIEngine();
-  SimpleUIEngine(AppCreator* app);
+  SimpleUIEngine(const int width, const int height);
+  SimpleUIEngine(const int width, const int height, AppCreator* app);
+  ~SimpleUIEngine();
 
-  char Init();
+  void Init();
   void Run();
   
   void Update();

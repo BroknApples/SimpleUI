@@ -1,18 +1,20 @@
 #include <iostream>
+#include <stdexcept>
 
 #include "SimpleUIEngine/SimpleUIEngine.hpp"
 
 int main(int argc, char* argv[]) {
-  SimpleUIEngine application;
+  const int kWidth = 1280;
+  const int kHeight = 720;
+  SimpleUIEngine application(kWidth, kHeight);
 
-  char error_code = application.Init();
-  switch(error_code) {
-    case '0':
-      std::cout << "No Initialization Errors." << std::endl;
-    // TODO: Implement more error codes
+  try {
+    application.Init();
+    application.Run();
+  } catch (const std::exception &e) {
+    std::cout << e.what() << std::endl;
+    return EXIT_FAILURE;
   }
 
-  application.Run();
-
-  return 0;
+  return EXIT_SUCCESS;
 }
