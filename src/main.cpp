@@ -9,7 +9,10 @@ int main(int argc, char* argv[]) {
   SimpleUIEngine application(kWidth, kHeight);
 
   try {
-    application.Init();
+    if(!application.Init()) {
+      std::cout << "All processes initialized." << std::endl;
+    }
+    
     application.Run();
   } catch (const std::exception &e) {
     std::cout << e.what() << std::endl;

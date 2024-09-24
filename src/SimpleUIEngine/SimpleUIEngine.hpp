@@ -3,11 +3,7 @@
 
 #include <iostream>
 
-#include <imgui/imgui.h>
-#include <GLFW/glfw3.h>
-#include <vulkan/vulkan.hpp>
-
-#include "../Graphics/Window.hpp"
+#include "../Graphics/SimUIWindow.hpp"
 #include "Editor.hpp"
 #include "AppCreator.hpp"
 
@@ -23,7 +19,7 @@ class SimpleUIEngine {
   SimpleUIEngine(const int width, const int height, AppCreator* app);
   ~SimpleUIEngine();
 
-  void Init();
+  bool Init();
   void Run();
   
   void Update();

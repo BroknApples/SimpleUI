@@ -22,11 +22,8 @@ SimpleUIEngine::~SimpleUIEngine() {
 /*
   Initialize all engine components includeing, GLAD, GLFW, VULKAN, IMGUI
 */
-void SimpleUIEngine::Init() {
-  // TODO: Implement
-  window_.Init();
-  
-  std::cout << "All Processes Initialized." << std::endl;
+bool SimpleUIEngine::Init() {
+  return window_.Init();
 }
 
 /*
@@ -44,7 +41,6 @@ void SimpleUIEngine::Run() {
 */
 void SimpleUIEngine::Update() {
   // TODO: Implement
-  glfwPollEvents();
 }
 
 /*
