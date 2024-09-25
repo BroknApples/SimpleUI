@@ -1,9 +1,10 @@
 # Main
 set(SOURCE_CODE
   main.cpp
-  SimpleUIEngine/SimUIEngine.cpp
-  SimpleUIEngine/AppCreator.cpp
-  SimpleUIEngine/Editor.cpp
+  SimpleUIEngine/SimUI_Engine.cpp
+  SimpleUIEngine/SimUI_Editor.cpp
+  SimpleUIEngine/SimUI_App.cpp
+  SimpleUIEngine/SimUI_IO.cpp
 )
 
 add_executable("SimpleUI" ${SOURCE_CODE})

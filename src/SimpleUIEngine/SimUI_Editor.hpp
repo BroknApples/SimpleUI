@@ -9,6 +9,8 @@
 #include <imgui-SFML.h>
 #include <imgui.h>
 
+#include "SimUI_IO.hpp"
+
 class Editor {
  private:
   sf::RenderWindow window_;
@@ -26,11 +28,11 @@ class Editor {
 
   bool Init();
 
-  void Update();
+  void Update(sf::Clock delta_clock);
   void Render();
   void Draw();
 
-  bool ShouldClose() const { return window_.isOpen(); }
+  bool IsOpen() const { return window_.isOpen(); }
   int GetWindowWidth() const { return width_; }
   int GetWindowHeight() const { return height_; }
 };
