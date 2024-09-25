@@ -1,35 +1,35 @@
-#include "SimpleUIEngine.hpp"
+#include "SimUIEngine.hpp"
 
 /*
   Create window with some size
 */
-SimpleUIEngine::SimpleUIEngine(const int width, const int height)
+SimUIEngine::SimUIEngine(const int width, const int height)
   : window_{width, height} {}
 
 /*
   Create window with some size, but also intialize internal app creator to some app
 */
-SimpleUIEngine::SimpleUIEngine(const int width, const int height, AppCreator* app)
+SimUIEngine::SimUIEngine(const int width, const int height, AppCreator* app)
   : window_{width, height}, app_{app} {}
 
 /*
   Clean
 */
-SimpleUIEngine::~SimpleUIEngine() {
+SimUIEngine::~SimUIEngine() {
   // TODO: Implement
 }
 
 /*
   Initialize all engine components includeing, GLAD, GLFW, VULKAN, IMGUI
 */
-bool SimpleUIEngine::Init() {
+bool SimUIEngine::Init() {
   return window_.Init();
 }
 
 /*
   Application loop
 */
-void SimpleUIEngine::Run() {
+void SimUIEngine::Run() {
   while(!window_.ShouldClose()) {
     Update();
     Render();
@@ -39,20 +39,20 @@ void SimpleUIEngine::Run() {
 /*
   Handle inputs, update screen positions, etc.
 */
-void SimpleUIEngine::Update() {
+void SimUIEngine::Update() {
   // TODO: Implement
 }
 
 /*
   Render elements to buffer
 */
-void SimpleUIEngine::Render() {
+void SimUIEngine::Render() {
   // TODO: Implement
 }
 
 /*
   Put elements to screen
 */
-void SimpleUIEngine::Draw() {
+void SimUIEngine::Draw() {
   // TODO: Implement
 }

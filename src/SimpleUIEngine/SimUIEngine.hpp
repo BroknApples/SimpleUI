@@ -3,11 +3,13 @@
 
 #include <iostream>
 
+#include <SFML/Graphics.hpp>
+
 #include "../Graphics/SimUIWindow.hpp"
 #include "Editor.hpp"
 #include "AppCreator.hpp"
 
-class SimpleUIEngine {
+class SimUIEngine {
  private:
   SimUIWindow window_;
 
@@ -15,9 +17,9 @@ class SimpleUIEngine {
   AppCreator* app_ = nullptr;
   
  public:
-  SimpleUIEngine(const int width, const int height);
-  SimpleUIEngine(const int width, const int height, AppCreator* app);
-  ~SimpleUIEngine();
+  SimUIEngine(const int width, const int height);
+  SimUIEngine(const int width, const int height, AppCreator* app);
+  ~SimUIEngine();
 
   bool Init();
   void Run();
