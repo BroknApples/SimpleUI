@@ -4,7 +4,6 @@ set(SOURCE_CODE
   SimpleUIEngine/SimUIEngine.cpp
   SimpleUIEngine/AppCreator.cpp
   SimpleUIEngine/Editor.cpp
-  Graphics/SimUIWindow.cpp
 )
 
 add_executable("SimpleUI" ${SOURCE_CODE})

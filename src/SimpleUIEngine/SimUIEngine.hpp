@@ -1,24 +1,18 @@
 #ifndef SIMPLE_UI_ENGINE_HPP
 #define SIMPLE_UI_ENGINE_HPP
 
-#include <iostream>
+#include <string>
 
-#include <SFML/Graphics.hpp>
-
-#include "../Graphics/SimUIWindow.hpp"
 #include "Editor.hpp"
 #include "AppCreator.hpp"
 
 class SimUIEngine {
  private:
-  SimUIWindow window_;
-
   Editor editor_;
   AppCreator* app_ = nullptr;
   
  public:
-  SimUIEngine(const int width, const int height);
-  SimUIEngine(const int width, const int height, AppCreator* app);
+  SimUIEngine(const int width, const int height, const int frame_rate, const std::string window_name);
   ~SimUIEngine();
 
   bool Init();
