@@ -4,8 +4,8 @@
 #include "SimpleUIEngine/SimUI_Engine.hpp"
 
 int main(int argc, char* argv[]) {
-  const int kWidth = 1280;
-  const int kHeight = 720;
+  const int kWidth = 1920;
+  const int kHeight = 1080;
   const int kFrameRate = 90;
   const std::string kWindowName = "Simple UI Engine";
   SimUIEngine engine(kWidth, kHeight, kFrameRate, kWindowName);

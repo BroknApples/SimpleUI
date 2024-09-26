@@ -38,15 +38,4 @@ void SimUIEngine::Run() {
     editor_.Render();
     editor_.Draw();
   }
-
-//       
-//       
-
-//       
-
-//       ImGui::ShowDemoWindow();
-
-//       
-//       
-//   }
 }

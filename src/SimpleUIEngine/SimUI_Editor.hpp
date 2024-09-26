@@ -2,6 +2,7 @@
 #define EDITOR_HPP
 
 #include <iostream>
+#include <vector>
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
@@ -17,6 +18,9 @@ class Editor {
   int frame_rate_;
   std::string window_name_;
   int width_, height_;
+
+  void RenderMenuBar();
+
 
  public:
   Editor(const int width, const int height, const int frame_rate, const std::string window_name);

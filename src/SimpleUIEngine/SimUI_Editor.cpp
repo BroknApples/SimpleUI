@@ -26,7 +26,7 @@ bool Editor::Init() {
   } else {
     std::cout << "ImGui & SFML initialized." << std::endl;
   }
-
+  
   return true;
 }
 
@@ -39,7 +39,8 @@ void Editor::Update(sf::Clock delta_clock) {
 
 void Editor::Render() {
   ImGui::ShowDemoWindow();
-  
+
+  RenderMenuBar();
   window_.clear();
   ImGui::SFML::Render(window_);
 }
@@ -47,4 +48,45 @@ void Editor::Render() {
 void Editor::Draw() {
   
   window_.display();
+}
+
+void Editor::RenderMenuBar() {
+  ImGui::BeginMainMenuBar();
+    if (ImGui::BeginMenu("File")) {
+      if (ImGui::MenuItem("Open..", "Ctrl+O")) {
+
+      }
+      if (ImGui::MenuItem("Save", "Ctrl+S")) {
+
+      }
+      if (ImGui::MenuItem("Close", "Ctrl+W")) {
+
+      }
+      ImGui::EndMenu();
+    }
+    if (ImGui::BeginMenu("Edit")) {
+      if (ImGui::MenuItem("Open..", "Ctrl+O")) {
+
+      }
+      if (ImGui::MenuItem("Save", "Ctrl+S")) {
+
+      }
+      if (ImGui::MenuItem("Close", "Ctrl+W")) {
+
+      }
+      ImGui::EndMenu();
+    }
+    if (ImGui::BeginMenu("View")) {
+      if (ImGui::MenuItem("Open..", "Ctrl+O")) {
+
+      }
+      if (ImGui::MenuItem("Save", "Ctrl+S")) {
+
+      }
+      if (ImGui::MenuItem("Close", "Ctrl+W")) {
+
+      }
+      ImGui::EndMenu();
+    }
+    ImGui::EndMainMenuBar();
 }
